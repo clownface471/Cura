@@ -1,0 +1,29 @@
+[package]
+name = "cura-filter"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nora (Mori)"]
+description = "CURA Kernel-Mode File System Filter Driver (Ring 0)"
+license = "Proprietary"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Windows Kernel Mode Development
+# Note: Use windows-kernel-rs or wdk crates for kernel development
+# These will be added when you start Phase 1 implementation
+
+[profile.release]
+opt-level = "z"     # Optimize for size
+lto = true          # Link-time optimization
+codegen-units = 1   # Better optimization
+panic = "abort"     # Kernel mode cannot unwind
+strip = true        # Strip symbols
+
+[profile.dev]
+opt-level = 0
+panic = "abort"
+
+# Kernel drivers must be carefully optimized
+# Memory safety is CRITICAL in Ring 0

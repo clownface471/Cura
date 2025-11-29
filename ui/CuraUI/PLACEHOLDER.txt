@@ -1,0 +1,9 @@
+This directory will contain the Flutter UI project.
+
+Flutter project will be initialized in Phase 3 (Months 17-24).
+
+For now, focus on:
+1. Kernel driver (CuraFilter) - Phase 1
+2. Service (CuraCore) - Phase 2
+
+DO NOT start with UI!
