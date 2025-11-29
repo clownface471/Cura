@@ -1,0 +1,68 @@
+# Rust/Cargo
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# C++ Build
+build/
+cmake-build-*/
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# CURA Specific
+*.sys
+*.onnx
+*.bin
+logs/
+snapshots/
+vault/
+*.enc
+
+# Secrets & Keys
+*.key
+*.pem
+config/secrets.json
+.env
+
+# AI Models (large files)
+models/*.onnx
+models/*.bin
+datasets/*
+!datasets/README.md
+
+# Test artifacts
+test_files/
+crash_dumps/
