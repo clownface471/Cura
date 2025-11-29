@@ -2,29 +2,77 @@
 
 Automation tools for CURA development.
 
-## Scripts (Future)
-
-This directory will contain:
+## Available Scripts
 
 ### Build Scripts
-- `build_all.ps1` - Build all components
+
+**`build_all.ps1`** - Build all CURA components
+
+```powershell
+.\build_all.ps1                # Build in Release mode
+.\build_all.ps1 -Configuration Debug
+```
+
+Builds:
+- Kernel driver (CuraFilter.sys)
+- Service (CuraCore.exe)
+- Rust exercises
+
+**`clean_all.ps1`** - Clean all build artifacts
+
+```powershell
+.\clean_all.ps1        # Prompts for confirmation
+.\clean_all.ps1 -Force # Skip confirmation
+```
+
+Removes:
+- Rust target directories
+- C++ build directories
+- Shows space freed
+
+### Testing Scripts
+
+**`test_driver.ps1`** - Load/test kernel driver in VM
+
+⚠️ **WARNING: Only run in Virtual Machine!**
+
+```powershell
+.\test_driver.ps1 -Load      # Load driver
+.\test_driver.ps1 -Status    # Check driver status
+.\test_driver.ps1 -Unload    # Unload driver
+.\test_driver.ps1 -Logs      # Show how to view logs
+```
+
+**`run_exercises.ps1`** - Run Rust learning exercises
+
+```powershell
+.\run_exercises.ps1                    # Run all exercises + tests
+.\run_exercises.ps1 -ExerciseNumber 1  # Run specific exercise
+```
+
+Exercises:
+1. Ownership
+2. Borrowing
+3. Lifetimes
+4. Result types
+5. Error handling
+6. Raw pointers
+7. Pointer validation
+8. No-std buffers
+9. String comparison
+10. Callbacks
+11. Practice project (file filter)
+
+### Future Scripts
 - `build_kernel.ps1` - Build kernel driver only
 - `build_service.ps1` - Build service only
 - `sign_driver.ps1` - Sign driver with test certificate
-
-### Testing Scripts
-- `test_driver.ps1` - Load/unload driver in VM
 - `stress_test.ps1` - Stability testing
 - `benchmark.ps1` - Performance benchmarks
-
-### Deployment Scripts
 - `package.ps1` - Create installer
 - `deploy_vm.ps1` - Deploy to test VM
-
-### Development Utilities
 - `setup_dev_env.ps1` - One-click dev environment setup
 - `create_test_cert.ps1` - Generate test signing certificate
-- `clean_all.ps1` - Clean all build artifacts
 
 ## Example: Build All Script (Future)
 
