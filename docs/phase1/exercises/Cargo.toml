@@ -1,0 +1,55 @@
+[package]
+name = "rust-exercises"
+version = "0.1.0"
+edition = "2021"
+
+# Rust learning exercises for CURA kernel development
+# Complete these before moving to actual kernel programming
+
+[[bin]]
+name = "ex01_ownership"
+path = "src/ex01_ownership.rs"
+
+[[bin]]
+name = "ex02_borrowing"
+path = "src/ex02_borrowing.rs"
+
+[[bin]]
+name = "ex03_lifetimes"
+path = "src/ex03_lifetimes.rs"
+
+[[bin]]
+name = "ex04_result"
+path = "src/ex04_result.rs"
+
+[[bin]]
+name = "ex05_errors"
+path = "src/ex05_errors.rs"
+
+[[bin]]
+name = "ex06_pointers"
+path = "src/ex06_pointers.rs"
+
+[[bin]]
+name = "ex07_validation"
+path = "src/ex07_validation.rs"
+
+[[bin]]
+name = "ex08_buffer"
+path = "src/ex08_buffer.rs"
+
+[[bin]]
+name = "ex09_strings"
+path = "src/ex09_strings.rs"
+
+[[bin]]
+name = "ex10_callbacks"
+path = "src/ex10_callbacks.rs"
+
+[[bin]]
+name = "project_file_filter"
+path = "src/project_file_filter.rs"
+
+[dependencies]
+
+[dev-dependencies]
