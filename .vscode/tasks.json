@@ -1,0 +1,125 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build All",
+      "type": "shell",
+      "command": ".\\tools\\scripts\\build_all.ps1",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Kernel Driver",
+      "type": "shell",
+      "command": "cargo",
+      "args": [
+        "build",
+        "--release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/kernel/CuraFilter"
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$rustc"
+      ]
+    },
+    {
+      "label": "Build Service",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build",
+        "--config",
+        "Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/service/CuraCore"
+      },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Exercises",
+      "type": "shell",
+      "command": ".\\tools\\scripts\\run_exercises.ps1",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Exercise (Input Number)",
+      "type": "shell",
+      "command": ".\\tools\\scripts\\run_exercises.ps1",
+      "args": [
+        "-ExerciseNumber",
+        "${input:exerciseNumber}"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean All",
+      "type": "shell",
+      "command": ".\\tools\\scripts\\clean_all.ps1",
+      "args": [
+        "-Force"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Kernel Driver (Cargo)",
+      "type": "shell",
+      "command": "cargo",
+      "args": [
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/kernel/CuraFilter"
+      },
+      "group": "test",
+      "problemMatcher": [
+        "$rustc"
+      ]
+    },
+    {
+      "label": "Test Exercises",
+      "type": "shell",
+      "command": "cargo",
+      "args": [
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/docs/phase1/exercises"
+      },
+      "group": "test",
+      "problemMatcher": [
+        "$rustc"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "exerciseNumber",
+      "type": "promptString",
+      "description": "Exercise number (1-11)",
+      "default": "1"
+    }
+  ]
+}

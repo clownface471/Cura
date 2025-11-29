@@ -1,0 +1,51 @@
+{
+  // CURA Project Settings
+  "editor.formatOnSave": true,
+  "editor.rulers": [
+    100,
+    120
+  ],
+  "files.associations": {
+    "*.rs": "rust",
+    "*.toml": "toml",
+    "*.ps1": "powershell"
+  },
+  // Rust settings
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.cargo.buildScripts.enable": true,
+  // Exclude build artifacts from search
+  "files.exclude": {
+    "**/target": true,
+    "**/build": true,
+    "**/.dart_tool": true
+  },
+  "search.exclude": {
+    "**/target": true,
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/node_modules": true
+  },
+  // C++ settings
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "cmake.configureOnOpen": false,
+  // Terminal
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  // File watchers
+  "files.watcherExclude": {
+    "**/target/**": true,
+    "**/build/**": true
+  },
+  // Format settings
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[cmake]": {
+    "editor.defaultFormatter": "ms-vscode.cmake-tools"
+  }
+}

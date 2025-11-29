@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Service (CuraCore)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/service/CuraCore/build/bin/Release/CuraCore.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run Exercise",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/docs/phase1/exercises/target/debug/${input:exerciseBinary}",
+      "args": [],
+      "cwd": "${workspaceFolder}/docs/phase1/exercises"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "exerciseBinary",
+      "type": "pickString",
+      "description": "Select exercise to debug",
+      "options": [
+        "ex01_ownership",
+        "ex02_borrowing",
+        "ex03_lifetimes",
+        "ex04_result",
+        "ex05_errors",
+        "ex06_pointers",
+        "ex07_validation",
+        "ex08_buffer",
+        "ex09_strings",
+        "ex10_callbacks",
+        "project_file_filter"
+      ]
+    }
+  ]
+}

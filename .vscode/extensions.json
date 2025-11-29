@@ -1,0 +1,28 @@
+{
+  "recommendations": [
+    // Rust development
+    "rust-lang.rust-analyzer",
+    "vadimcn.vscode-lldb",
+
+    // C++ development
+    "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools",
+
+    // PowerShell
+    "ms-vscode.powershell",
+
+    // Flutter (Phase 3)
+    "dart-code.flutter",
+    "dart-code.dart-code",
+
+    // General productivity
+    "ms-vscode.hexeditor",
+    "eamodio.gitlens",
+    "gruntfuggly.todo-tree",
+    "streetsidesoftware.code-spell-checker",
+
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint"
+  ]
+}

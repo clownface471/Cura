@@ -1,0 +1,64 @@
+{
+  "folders": [
+    {
+      "name": "🛡️ CURA (Root)",
+      "path": "."
+    },
+    {
+      "name": "🔧 Kernel Driver",
+      "path": "kernel/CuraFilter"
+    },
+    {
+      "name": "🧠 Service",
+      "path": "service/CuraCore"
+    },
+    {
+      "name": "📚 Exercises",
+      "path": "docs/phase1/exercises"
+    },
+    {
+      "name": "🎨 UI (Phase 3)",
+      "path": "ui/CuraUI"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/target": true,
+      "**/build": true,
+      "**/.dart_tool": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "rust-lang.rust-analyzer",
+      "ms-vscode.cpptools",
+      "ms-vscode.cmake-tools",
+      "ms-vscode.powershell"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "📦 Build All Components",
+        "type": "shell",
+        "command": "${workspaceFolder:🛡️ CURA (Root)}/tools/scripts/build_all.ps1",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "🎓 Run All Exercises",
+        "type": "shell",
+        "command": "${workspaceFolder:🛡️ CURA (Root)}/tools/scripts/run_exercises.ps1"
+      },
+      {
+        "label": "🧹 Clean All",
+        "type": "shell",
+        "command": "${workspaceFolder:🛡️ CURA (Root)}/tools/scripts/clean_all.ps1",
+        "args": ["-Force"]
+      }
+    ]
+  }
+}
